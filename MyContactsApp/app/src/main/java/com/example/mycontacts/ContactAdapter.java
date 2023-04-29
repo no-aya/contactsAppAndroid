@@ -21,7 +21,6 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Contactholder> {
 
-
     Context context;
     List<Contacts> contactsList;
 
@@ -42,14 +41,10 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Contacth
 
     @Override
     public void onBindViewHolder(@NonNull Contactholder holder, int position) {
-
-
         final Contacts contacts = contactsList.get(position);
-
         holder.contactname.setText(contacts.getContactname());
 
         Glide.with(context).load(contacts.getImageURL()).into(holder.imageView);
-
 
         holder.callingbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,9 +55,6 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.Contacth
                 context.startActivity(intent);
             }
         });
-
-
-
         holder.emailbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

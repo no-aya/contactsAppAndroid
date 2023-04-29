@@ -33,12 +33,10 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
-
-
     FirebaseAuth mAuth;
     Toolbar toolbar;
     FirebaseUser firebaseUser;
-    CircleImageView imageontoOLBAR;
+    CircleImageView imageontoOLBAR; //Converting to adated format
     TextView usernameOnToolbar;
     RecyclerView recyclerView;
     List<Contacts> contactsList;
@@ -49,13 +47,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         //FirebaseDatabase.getInstance().setLogLevel(Logger.Level.DEBUG);
         toolbar = findViewById(R.id.toolbarmain);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(" ");
-
-
         recyclerView = findViewById(R.id.recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
@@ -129,22 +124,14 @@ public class MainActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
                 contactsList.clear();
-
                 for (DataSnapshot ds: snapshot.getChildren()) {
-
                     Contacts contacts = ds.getValue(Contacts.class);
-
                     contactsList.add(contacts);
-
                     mAdapter = new ContactAdapter(MainActivity.this, contactsList );
                     recyclerView.setAdapter(mAdapter);
-
                 }
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -153,31 +140,20 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         getMenuInflater().inflate(R.menu.main_menu, menu);
         return super.onCreateOptionsMenu(menu);
 
-
     }
-
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
-
-
         if (item.getItemId() == R.id.logout) {
-
             mAuth.signOut();
             finish();
             Toast.makeText(this, "Signed Out", Toast.LENGTH_SHORT).show();
             startActivity(new Intent(MainActivity.this, StartActivity.class));
-
-
-
 
         }
         return super.onOptionsItemSelected(item);

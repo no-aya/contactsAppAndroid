@@ -24,8 +24,7 @@ public class LoginActivity extends AppCompatActivity {
     Button signIn;
     String email, password;
     FirebaseAuth auth;
-
-    ProgressDialog pd;
+    ProgressDialog pd; //Looading screen
 
 
     @Override
@@ -48,28 +47,16 @@ public class LoginActivity extends AppCompatActivity {
         signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
-
-
                 if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)) {
-
                     Toast.makeText(LoginActivity.this, "Required", Toast.LENGTH_SHORT).show();
-
-
                 } else {
 
                     LogmeIn(email, password);
                 }
-
-
             }
         });
-
-
-
-
 
     }
 

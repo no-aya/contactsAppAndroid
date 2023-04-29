@@ -254,8 +254,6 @@ public class RegisterAccount extends AppCompatActivity {
                                 pd.dismiss();
 
                                 String imageURL = uri.toString();
-
-
                                 HashMap<String, Object> hashMap = new HashMap<>();
 
                                 hashMap.put("username", username);

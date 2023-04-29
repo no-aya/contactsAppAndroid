@@ -26,19 +26,12 @@ import java.util.HashMap;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileActivity extends AppCompatActivity {
-
-
-
     MaterialEditText et_username, et_number;
     Button updateprofile;
     CircleImageView imageView;
-
     FirebaseUser firebaseUser;
-
     String username, usernumber;
     ProgressDialog pd;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,9 +55,7 @@ public class ProfileActivity extends AppCompatActivity {
                 Users users = snapshot.getValue(Users.class);
 
                 et_number.setText(users.getContactnumber());
-
                 Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageView);
-
                 et_username.setText(users.getUsername());
 
 
@@ -76,23 +67,14 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-
         updateprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 username = et_username.getText().toString();
                 usernumber = et_number.getText().toString();
-
                 updateProfile(usernumber, username);
-
             }
         });
-
-
-
-
-
     }
 
     private void updateProfile(String usernumber, String username) {
@@ -101,26 +83,18 @@ public class ProfileActivity extends AppCompatActivity {
         pd.setMessage("Updating");
         pd.show();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
-
-
         HashMap<String, Object> hashMap = new HashMap<>();
-
         hashMap.put("username", username);
         hashMap.put("contactnumber", usernumber);
 
         reference.updateChildren(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-
                 pd.dismiss();
-
                 Toast.makeText(ProfileActivity.this, "Updated", Toast.LENGTH_SHORT).show();
                 finish();
             }
         });
-
-
-
 
     }
 

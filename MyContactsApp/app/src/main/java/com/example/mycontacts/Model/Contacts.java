@@ -1,8 +1,6 @@
 package com.example.mycontacts.Model;
 
 public class Contacts {
-
-
     String contactemail, contactname, contactnumber, imageURL;
 
     public Contacts(String contactemail, String contactname, String contactnumber, String imageURL) {
@@ -11,8 +9,6 @@ public class Contacts {
         this.contactnumber = contactnumber;
         this.imageURL = imageURL;
     }
-
-
 
     public Contacts() {
     }
