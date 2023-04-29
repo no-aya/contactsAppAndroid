@@ -3,6 +3,10 @@
 ## Description
 Cette application permet de gérer ses contacts. Ces contacts sont gérés dans une bd Firebase. Il suffit d'accéder à l'application avec ses coordonnées d'authentification.
 
+
+https://user-images.githubusercontent.com/106016869/235281801-0123f77f-cc59-4e70-b3e9-f28efe610d4b.mp4
+
+
 ## Entités
 - Contact
 Chaques contacts possède les attributs suivants :
@@ -41,6 +45,7 @@ Et dans le fichier `build.gradle` du module `app` :
 ### Console
 Pour accéder à la console Firebase, il faut se rendre sur le site suivant : [Firebase](https://console.firebase.google.com/u/0/)
 
+![image](https://user-images.githubusercontent.com/106016869/235281596-2bc99cdb-7ed8-412c-83c1-ef6edd947aed.png)
 
 ## Fonctionnalités
 ### Authentification
@@ -62,15 +67,19 @@ Les contacts sont gérés par la classe `ContactAdapter`.
 ## Interfaces
 
 ### Login
+![image](https://user-images.githubusercontent.com/106016869/235281726-807655e8-ab73-4a49-9123-92cd64c657be.png)
 
 
 ### Register
+![image](https://user-images.githubusercontent.com/106016869/235281746-1d9b10d7-04cb-48b0-8227-0b7dc099d7a9.png)
 
 
 ### Contacts
+![image](https://user-images.githubusercontent.com/106016869/235281770-a0a0a985-bc13-40fd-b659-1cd75d986068.png)
 
 
 ### AddContact
+![image](https://user-images.githubusercontent.com/106016869/235281782-595d6849-829d-488b-8796-0b67b21ff996.png)
 
 
 ---
